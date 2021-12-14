@@ -15,7 +15,11 @@ Author: Jianhui Yu, Chaoyi Zhang, Heng Wang, Dingxin Zhang, Yang Song, Tiange Xi
 
 * Python >=3.6
 * Pytorch >= 1.4
-* Packages: tqdm, visualdl, einops, natsort
+* Packages: tqdm, sklearn, visualdl, einops, natsort
+* To build the CUDA kernel for FPS:
+    ```angular2html
+    pip install "git+git://github.com/erikwijmans/Pointnet2_PyTorch.git#egg=pointnet2_ops&subdirectory=pointnet2_ops_lib"
+    ```
 
 ## Performance
 
@@ -35,3 +39,11 @@ journal={arXiv preprint arXiv:2112.04863},
 year={2021}
 }
 ```
+
+### Acknowledgement
+
+Our code is based on:
+
+* [Pointnet2_PyTorch](https://github.com/erikwijmans/Pointnet2_PyTorch)
+* [Pointnet_Pointnet2_pytorch](https://github.com/yanx27/Pointnet_Pointnet2_pytorch)
+* [dgcnn.pytorch](https://github.com/AnTao97/dgcnn.pytorch)
