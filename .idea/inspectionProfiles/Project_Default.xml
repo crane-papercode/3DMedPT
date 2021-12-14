@@ -1,0 +1,26 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="191" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="8">
+            <item index="0" class="java.lang.String" itemvalue="tqdm" />
+            <item index="1" class="java.lang.String" itemvalue="face_recognition" />
+            <item index="2" class="java.lang.String" itemvalue="opencv-contrib-python" />
+            <item index="3" class="java.lang.String" itemvalue="dlib" />
+            <item index="4" class="java.lang.String" itemvalue="pytorch-lightning" />
+            <item index="5" class="java.lang.String" itemvalue="hydra-core" />
+            <item index="6" class="java.lang.String" itemvalue="msgpack-numpy" />
+            <item index="7" class="java.lang.String" itemvalue="lmdb" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
