@@ -136,8 +136,8 @@ class Model(nn.Module):
         self.use_norm = args.use_norm
 
         # transformer layer
-        self.tf1 = trans_block(3, 128, n_samples=512, K=20, d=args.dim_k, heads=args.head, ch_raise=64)
-        self.tf2 = trans_block(128, 256, n_samples=128, K=20, d=args.dim_k, heads=args.head, ch_raise=256)
+        self.tf1 = trans_block(3, 128, n_samples=512, K=args.num_K[0], d=args.dim_k, heads=args.head, ch_raise=64)
+        self.tf2 = trans_block(128, 256, n_samples=128, K=args.num_K[1], d=args.dim_k, heads=args.head, ch_raise=256)
 
         # multi-graph attention
         self.attn = MGR(256, 256, dim_k=args.dim_k, heads=args.head)

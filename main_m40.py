@@ -171,6 +171,8 @@ if __name__ == "__main__":
                         help='Whether to use norm')
     parser.add_argument('--num_points', type=int, default=1024,
                         help='num of points to use')
+    parser.add_argument('--num_K', nargs='+', type=int,
+                        help='list of num of neighbors')
     parser.add_argument('--dropout', type=float, default=0.5,
                         help='initial dropout rate')
     parser.add_argument('--emb_dims', type=int, default=1024, metavar='N',
