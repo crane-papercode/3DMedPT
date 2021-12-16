@@ -3,7 +3,10 @@
 **\[our code for IntrA and Modelnet40 classification is released]**
 
 3D Medical Point Transformer: Introducing Convolution to Attention Networks for Medical Point Cloud
-Analysis [[arxiv]](https://arxiv.org/pdf/2112.04863.pdf)
+Analysis [[arxiv]](https://arxiv.org/pdf/2112.04863.pdf) [[project page]](https://3dmedpt.github.io/)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/3d-medical-point-transformer-introducing/classification-on-intra)](https://paperswithcode.com/sota/classification-on-intra?p=3d-medical-point-transformer-introducing)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/3d-medical-point-transformer-introducing/3d-part-segmentation-on-intra)](https://paperswithcode.com/sota/3d-part-segmentation-on-intra?p=3d-medical-point-transformer-introducing)
 
 Author: Jianhui Yu, Chaoyi Zhang, Heng Wang, Dingxin Zhang, Yang Song, Tiange Xiang, Dongnan Liu, Weidong Cai
 
@@ -67,6 +70,6 @@ year={2021}
 
 Our code borrows from:
 
-* [Pointnet2_PyTorch](https://github.com/erikwijmans/Pointnet2_PyTorch)
+* [lambda-networks](https://github.com/lucidrains/lambda-networks)
 * [Pointnet_Pointnet2_pytorch](https://github.com/yanx27/Pointnet_Pointnet2_pytorch)
 * [dgcnn.pytorch](https://github.com/AnTao97/dgcnn.pytorch)
