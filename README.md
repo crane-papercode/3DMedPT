@@ -27,6 +27,18 @@ Author: Jianhui Yu, Chaoyi Zhang, Heng Wang, Dingxin Zhang, Yang Song, Tiange Xi
 * State-of-the-art accuracy on IntrA segmentation (IoU): <b>94.82%</b> on healthy vessel and <b>82.39%</b> on aneurysm
 * ModelNet40 classification: <b>93.4%</b>
 
+## Usage
+
+* For IntrA model train (1024 points)
+  ```
+  CUDA_VISIBLE_DEVICES=xx python main_intra.py --exp_name intra_cls_train --mode train --num_points 1024 --lr 0.01 --use_sgd True --num_K 32 64
+  ```
+
+* For ModelNet40 model train (1024 points)
+  ```
+  CUDA_VISIBLE_DEVICES=xx python main_m40.py --exp_name m40_cls_train --mode train --num_points 1024 --epochs 250 --lr 0.001 --num_K 20 20
+  ```
+
 ## Citation
 
 If you find our data or project useful in your research, please cite:
@@ -42,7 +54,7 @@ year={2021}
 
 ### Acknowledgement
 
-Our code is based on:
+Our code borrows from:
 
 * [Pointnet2_PyTorch](https://github.com/erikwijmans/Pointnet2_PyTorch)
 * [Pointnet_Pointnet2_pytorch](https://github.com/yanx27/Pointnet_Pointnet2_pytorch)
