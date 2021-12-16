@@ -7,7 +7,7 @@ from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 from natsort import natsorted
 
-BASE = os.path.dirname(os.path.abspath(__file__)) + "/data/IntrA3D/"
+BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/IntrA3D/")
 
 
 class Intra3D(Dataset):
@@ -86,11 +86,9 @@ class Intra3D(Dataset):
 
         # data augmentation
         if self.data_augmentation:
-            # jitter points (x,y,z)
             if self.train_mode == 'train':
                 point_set[:, :3] = random_scale(point_set[:, :3])
                 point_set[:, :3] = translate_pointcloud(point_set[:, :3])
-                # point_set[:, :3] = point_set[:, :3]
             if self.train_mode == 'test':
                 # point_set[:, :3] = random_scale(point_set[:, :3])
                 # point_set[:, :3] = translate_pointcloud(point_set[:, :3])
@@ -149,5 +147,3 @@ if __name__ == '__main__':
     for i, (point_set, labels) in enumerate(dataset_test):
         # print(point_set[:, :3].shape)
         print(point_set.shape, labels.shape)
-        if i == 3:
-            break

@@ -18,7 +18,7 @@ class MGR(nn.Module):
         self.heads = heads
         self.k = dim_k
 
-        assert (C_out % heads) == 0, 'values dimension must be divisible by number of heads for multi-head query'
+        assert (C_out % heads) == 0, 'values dimension must be integer'
         dim_v = C_out // heads
 
         self.conv_q = nn.Conv1d(C_in, dim_k * heads, 1, bias=False)
@@ -68,14 +68,14 @@ class transformer(nn.Module):
     def __init__(self, C_in, C_out, n_samples=None, K=20, dim_k=32, heads=8, ch_raise=64):
         super().__init__()
         self.d = dim_k
-        assert (C_out % heads) == 0, 'values dimension must be divisible by number of heads for multi-head query'
-        self.v = C_out // heads
+        assert (C_out % heads) == 0, 'values dimension must be integer'
+        dim_v = C_out // heads
 
         self.n_samples = n_samples
         self.K = K
         self.heads = heads
 
-        C_in = C_in * 2 + self.v
+        C_in = C_in * 2 + dim_v
         self.mlp = nn.Sequential(
             nn.Conv2d(C_in, ch_raise, 1, bias=False),
             nn.BatchNorm2d(ch_raise),
@@ -84,12 +84,12 @@ class transformer(nn.Module):
             nn.BatchNorm2d(ch_raise),
             nn.ReLU(True))
 
-        self.mlp_v = nn.Conv1d(C_in, self.v, 1, bias=False)
+        self.mlp_v = nn.Conv1d(C_in, dim_v, 1, bias=False)
         self.mlp_k = nn.Conv1d(C_in, dim_k, 1, bias=False)
         self.mlp_q = nn.Conv1d(ch_raise, heads * dim_k, 1, bias=False)
-        self.mlp_h = nn.Conv2d(3, self.v, 1, bias=False)
+        self.mlp_h = nn.Conv2d(3, dim_v, 1, bias=False)
 
-        self.bn_value = nn.BatchNorm1d(self.v)
+        self.bn_value = nn.BatchNorm1d(dim_v)
         self.bn_query = nn.BatchNorm1d(heads * dim_k)
 
     def forward(self, xyz, feature):
@@ -136,8 +136,8 @@ class Model(nn.Module):
         self.use_norm = args.use_norm
 
         # transformer layer
-        self.tf1 = trans_block(3, 128, n_samples=512, K=args.num_K[0], d=args.dim_k, heads=args.head, ch_raise=64)
-        self.tf2 = trans_block(128, 256, n_samples=128, K=args.num_K[1], d=args.dim_k, heads=args.head, ch_raise=256)
+        self.tf1 = trans_block(3, 128, n_samples=512, K=args.num_K[0], dim_k=args.dim_k, heads=args.head, ch_raise=64)
+        self.tf2 = trans_block(128, 256, n_samples=128, K=args.num_K[1], dim_k=args.dim_k, heads=args.head, ch_raise=256)
 
         # multi-graph attention
         self.attn = MGR(256, 256, dim_k=args.dim_k, heads=args.head)

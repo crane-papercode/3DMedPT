@@ -13,21 +13,31 @@ Author: Jianhui Yu, Chaoyi Zhang, Heng Wang, Dingxin Zhang, Yang Song, Tiange Xi
 
 ## Requirements
 
-* Python >=3.6
-* Pytorch >= 1.4
+* Python 3.7
+* Pytorch 1.6
+* CUDA 10.0
 * Packages: tqdm, sklearn, visualdl, einops, natsort
 * To build the CUDA kernel for FPS:
-    ```angular2html
-    pip install "git+git://github.com/erikwijmans/Pointnet2_PyTorch.git#egg=pointnet2_ops&subdirectory=pointnet2_ops_lib"
     ```
+    pip install pointnet2_ops_lib/.  
+    ```
+  <b>NOTE:</b> If you encounter problems while building the kernel, you can refer to [Pointnet2_PyTorch](https://github.com/erikwijmans/Pointnet2_PyTorch) for solutions.
+
+## Data
+The IntrA dataset can be downloaded from [intra3d2019](https://github.com/intra3d2019/IntrA), and you need to unzip the files to ```data/IntrA3D```.
+
+The ModelNet40 dataset is automatically downloaded.
 
 ## Performance
 
-* State-of-the-art accuracy on IntrA classification (F1 score): <b>0.936</b>
-* State-of-the-art accuracy on IntrA segmentation (IoU): <b>94.82%</b> on healthy vessel and <b>82.39%</b> on aneurysm
+* State-of-the-art accuracy on IntrA classification: <b>0.936</b> (F1 score)
+* State-of-the-art accuracy on IntrA segmentation: 
+  * IoU: <b>94.82%</b> on healthy vessel and <b>82.39%</b> on aneurysm
+  * DSC: <b>97.29%</b> on healthy vessel and <b>89.71%</b> on aneurysm
 * ModelNet40 classification: <b>93.4%</b>
+* ShapeNet40 part segmentation: <b>84.3%</b> (class mIoU)
 
-## Usage
+## Training Command
 
 * For IntrA model train (1024 points)
   ```
@@ -38,6 +48,7 @@ Author: Jianhui Yu, Chaoyi Zhang, Heng Wang, Dingxin Zhang, Yang Song, Tiange Xi
   ```
   CUDA_VISIBLE_DEVICES=xx python main_m40.py --exp_name m40_cls_train --mode train --num_points 1024 --epochs 250 --lr 0.001 --num_K 20 20
   ```
+<b>NOTE:</b> To achieve a fast computational speed, you can also uncomment ```torch.backends.cudnn.benchmark = True``` and comment out ```torch.backends.cudnn.deterministic = True```, while the final results might vary.
 
 ## Citation
 

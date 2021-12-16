@@ -300,7 +300,6 @@ if __name__ == "__main__":
 
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
-    # torch.backends.cudnn.benchmark = True
 
     io = IOStream('checkpoints/' + args.exp_name + '/run.log')
     io.cprint(str(args))
@@ -308,6 +307,7 @@ if __name__ == "__main__":
     args.cuda = not args.use_cuda and torch.cuda.is_available()
     if args.cuda:
         torch.cuda.manual_seed(args.seed)
+        # torch.backends.cudnn.benchmark = True
         torch.backends.cudnn.deterministic = True
         io.cprint('Using GPU ' + str(torch.cuda.current_device()))
     else:
