@@ -2,11 +2,12 @@
 
 **\[our code for IntrA and Modelnet40 classification is released]**
 
-3D Medical Point Transformer: Introducing Convolution to Attention Networks for Medical Point Cloud
-Analysis [[arxiv]](https://arxiv.org/pdf/2112.04863.pdf) [[project page]](https://3dmedpt.github.io/)
+3D Medical Point Transformer: Introducing Convolution to Attention Networks for Medical Point Cloud Analysis
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/3d-medical-point-transformer-introducing/classification-on-intra)](https://paperswithcode.com/sota/classification-on-intra?p=3d-medical-point-transformer-introducing)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/3d-medical-point-transformer-introducing/3d-part-segmentation-on-intra)](https://paperswithcode.com/sota/3d-part-segmentation-on-intra?p=3d-medical-point-transformer-introducing)
+
+[[arxiv]](https://arxiv.org/pdf/2112.04863.pdf) [[project page]](https://3dmedpt.github.io/)
 
 Author: Jianhui Yu, Chaoyi Zhang, Heng Wang, Dingxin Zhang, Yang Song, Tiange Xiang, Dongnan Liu, Weidong Cai
 
