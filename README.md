@@ -60,10 +60,10 @@ If you find our data or project useful in your research, please cite:
 
 ```
 @article{yu20213d,
-title={3D Medical Point Transformer: Introducing Convolution to Attention Networks for Medical Point Cloud Analysis},
-author={Yu, Jianhui and Zhang, Chaoyi and Wang, Heng and Zhang, Dingxin and Song, Yang and Xiang, Tiange and Liu, Dongnan and Cai, Weidong},
-journal={arXiv preprint arXiv:2112.04863},
-year={2021}
+  title={3D Medical Point Transformer: Introducing Convolution to Attention Networks for Medical Point Cloud Analysis},
+  author={Yu, Jianhui and Zhang, Chaoyi and Wang, Heng and Zhang, Dingxin and Song, Yang and Xiang, Tiange and Liu, Dongnan and Cai, Weidong},
+  journal={arXiv preprint arXiv:2112.04863},
+  year={2021}
 }
 ```
 
