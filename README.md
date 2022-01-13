@@ -11,9 +11,9 @@
 
 Author: Jianhui Yu, Chaoyi Zhang, Heng Wang, Dingxin Zhang, Yang Song, Tiange Xiang, Dongnan Liu, Weidong Cai -->
 
-## Model Architecture
+<!-- ## Model Architecture
 
-![model architecture](./images/model_details.jpg)
+![model architecture](./images/model_details.jpg) -->
 
 ## Requirements
 
