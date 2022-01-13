@@ -1,6 +1,6 @@
 # 3DMedPT
 
-**\[our code for IntrA and Modelnet40 classification is released]**
+<!-- **\[our code for IntrA and Modelnet40 classification is released]**
 
 3D Medical Point Transformer: Introducing Convolution to Attention Networks for Medical Point Cloud Analysis
 
@@ -9,7 +9,7 @@
 
 [[arxiv]](https://arxiv.org/pdf/2112.04863.pdf) [[project page]](https://3dmedpt.github.io/)
 
-Author: Jianhui Yu, Chaoyi Zhang, Heng Wang, Dingxin Zhang, Yang Song, Tiange Xiang, Dongnan Liu, Weidong Cai
+Author: Jianhui Yu, Chaoyi Zhang, Heng Wang, Dingxin Zhang, Yang Song, Tiange Xiang, Dongnan Liu, Weidong Cai -->
 
 ## Model Architecture
 
@@ -54,7 +54,7 @@ The ModelNet40 dataset is automatically downloaded.
   ```
 <b>NOTE:</b> To achieve a fast computational speed, you can also uncomment ```torch.backends.cudnn.benchmark = True``` and comment out ```torch.backends.cudnn.deterministic = True```, while the final results might vary.
 
-## Citation
+<!-- ## Citation
 
 If you find our data or project useful in your research, please cite:
 
@@ -65,7 +65,7 @@ If you find our data or project useful in your research, please cite:
   journal={arXiv preprint arXiv:2112.04863},
   year={2021}
 }
-```
+``` -->
 
 ### Acknowledgement
 
